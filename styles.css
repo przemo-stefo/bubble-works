@@ -4,7 +4,7 @@
    ========================================================================== */
 
 /* ==========================================================================
-   INTRO ANIMATION - Lottie Professional
+   INTRO ANIMATION - Squeegee & Bubbles Professional
    ========================================================================== */
 
 .intro {
@@ -15,7 +15,7 @@
     height: 100%;
     z-index: 9999;
     overflow: hidden;
-    background: linear-gradient(135deg, #0a1a2e 0%, #1a3a5c 50%, #0d3a5a 100%);
+    background: #87CEEB;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,90 +30,231 @@
     display: none;
 }
 
-/* Lottie animation container */
-.intro__lottie {
+/* Soapy dirty window background */
+.intro__soapy-bg {
     position: absolute;
     inset: 0;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.1) 0px,
+            rgba(255, 255, 255, 0.3) 2px,
+            transparent 4px,
+            transparent 20px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.1) 0px,
+            rgba(255, 255, 255, 0.2) 2px,
+            transparent 4px,
+            transparent 20px
+        ),
+        radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 60%, rgba(255, 255, 255, 0.3) 0%, transparent 40%),
+        radial-gradient(ellipse at 50% 80%, rgba(255, 255, 255, 0.35) 0%, transparent 45%),
+        linear-gradient(180deg,
+            rgba(200, 230, 255, 0.9) 0%,
+            rgba(180, 220, 250, 0.95) 30%,
+            rgba(160, 210, 245, 0.9) 60%,
+            rgba(140, 200, 240, 0.85) 100%
+        );
+    z-index: 1;
+}
+
+/* Real bubbles Lottie animation */
+.intro__bubbles {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    opacity: 0.9;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.6;
 }
 
-.intro__lottie dotlottie-player {
+.intro__bubbles dotlottie-player {
     width: 100%;
     height: 100%;
-    max-width: 800px;
-    max-height: 800px;
+    min-width: 100vw;
+    min-height: 100vh;
 }
 
-/* Main content */
+/* CSS Bubbles for extra effect */
+.intro__bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(
+        ellipse at 30% 30%,
+        rgba(255, 255, 255, 0.9) 0%,
+        rgba(200, 230, 255, 0.6) 30%,
+        rgba(150, 200, 250, 0.4) 50%,
+        rgba(100, 180, 240, 0.2) 70%,
+        transparent 100%
+    );
+    box-shadow:
+        inset -5px -5px 15px rgba(255, 255, 255, 0.8),
+        inset 5px 5px 15px rgba(100, 150, 200, 0.3),
+        0 4px 20px rgba(0, 100, 200, 0.2);
+    z-index: 6;
+    animation: bubbleFloat 4s ease-in-out infinite;
+}
+
+.intro__bubble--1 { width: 60px; height: 60px; top: 10%; left: 15%; animation-delay: 0s; }
+.intro__bubble--2 { width: 40px; height: 40px; top: 25%; left: 75%; animation-delay: 0.5s; }
+.intro__bubble--3 { width: 80px; height: 80px; top: 60%; left: 10%; animation-delay: 1s; }
+.intro__bubble--4 { width: 35px; height: 35px; top: 45%; left: 85%; animation-delay: 0.3s; }
+.intro__bubble--5 { width: 55px; height: 55px; top: 75%; left: 70%; animation-delay: 0.7s; }
+.intro__bubble--6 { width: 45px; height: 45px; top: 15%; left: 50%; animation-delay: 1.2s; }
+.intro__bubble--7 { width: 70px; height: 70px; top: 80%; left: 30%; animation-delay: 0.2s; }
+.intro__bubble--8 { width: 30px; height: 30px; top: 35%; left: 25%; animation-delay: 0.9s; }
+
+@keyframes bubbleFloat {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.05); }
+}
+
+/* Foam drips */
+.intro__foam {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    pointer-events: none;
+}
+
+.intro__foam-drip {
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 200px;
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(255, 255, 255, 0.8) 20%,
+        rgba(240, 248, 255, 0.6) 50%,
+        rgba(220, 240, 255, 0.3) 80%,
+        transparent 100%
+    );
+    border-radius: 0 0 50% 50%;
+    animation: foamDrip 3s ease-in-out infinite;
+}
+
+.intro__foam-drip--1 { left: 10%; animation-delay: 0s; height: 180px; }
+.intro__foam-drip--2 { left: 30%; animation-delay: 0.5s; height: 220px; }
+.intro__foam-drip--3 { left: 50%; animation-delay: 0.3s; height: 160px; }
+.intro__foam-drip--4 { left: 70%; animation-delay: 0.8s; height: 200px; }
+.intro__foam-drip--5 { left: 85%; animation-delay: 0.2s; height: 190px; }
+
+@keyframes foamDrip {
+    0% { transform: translateY(-50px); opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateY(50px); opacity: 0; }
+}
+
+/* Squeegee animation */
+.intro__squeegee {
+    position: absolute;
+    top: 0;
+    left: -200px;
+    width: 120px;
+    height: 100%;
+    z-index: 20;
+    animation: squeegeeWipe 2.5s ease-in-out 0.5s forwards;
+}
+
+.squeegee-svg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(-5deg);
+    width: 120px;
+    height: 300px;
+    filter: drop-shadow(3px 5px 10px rgba(0, 0, 0, 0.3));
+}
+
+.intro__water-trail {
+    position: absolute;
+    top: 0;
+    left: 60px;
+    width: 10px;
+    height: 100%;
+    background: linear-gradient(90deg,
+        rgba(135, 206, 250, 0.6) 0%,
+        rgba(135, 206, 250, 0.3) 50%,
+        transparent 100%
+    );
+}
+
+@keyframes squeegeeWipe {
+    0% {
+        left: -200px;
+    }
+    100% {
+        left: calc(100% + 200px);
+    }
+}
+
+/* Clean reveal layer - reveals clean window behind */
+.intro__clean-reveal {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2a5a8a 50%, #1a4a7a 100%);
+    z-index: 8;
+    clip-path: inset(0 100% 0 0);
+    animation: cleanReveal 2.5s ease-in-out 0.5s forwards;
+}
+
+@keyframes cleanReveal {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+/* Main content - logo and text */
 .intro__content {
     position: relative;
-    z-index: 10;
+    z-index: 15;
     text-align: center;
-}
-
-/* Title with letter animation */
-.intro__title {
-    font-size: clamp(2.5rem, 10vw, 5rem);
-    font-weight: 800;
-    color: #FFD700;
-    text-shadow:
-        0 0 20px rgba(255, 215, 0, 0.5),
-        0 0 40px rgba(255, 215, 0, 0.3),
-        0 4px 8px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2px;
-}
-
-.intro__letter {
-    display: inline-block;
     opacity: 0;
-    transform: translateY(50px) rotateX(-90deg);
-    animation: letterReveal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    transform: scale(0.9);
+    animation: contentReveal 0.8s ease-out 2.2s forwards;
 }
 
-.intro__letter:nth-child(1) { animation-delay: 0.1s; }
-.intro__letter:nth-child(2) { animation-delay: 0.15s; }
-.intro__letter:nth-child(3) { animation-delay: 0.2s; }
-.intro__letter:nth-child(4) { animation-delay: 0.25s; }
-.intro__letter:nth-child(5) { animation-delay: 0.3s; }
-.intro__letter:nth-child(6) { animation-delay: 0.35s; }
-.intro__letter:nth-child(7) { animation-delay: 0.4s; }
-.intro__letter:nth-child(8) { animation-delay: 0.5s; }
-.intro__letter:nth-child(9) { animation-delay: 0.55s; }
-.intro__letter:nth-child(10) { animation-delay: 0.6s; }
-.intro__letter:nth-child(11) { animation-delay: 0.65s; }
-.intro__letter:nth-child(12) { animation-delay: 0.7s; }
-
-.intro__space {
-    width: 20px;
+.intro__logo {
+    width: clamp(180px, 40vw, 300px);
+    height: auto;
+    border-radius: 16px;
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.4),
+        0 0 60px rgba(255, 215, 0, 0.3);
+    margin-bottom: 24px;
 }
 
-@keyframes letterReveal {
+@keyframes contentReveal {
     0% {
         opacity: 0;
-        transform: translateY(50px) rotateX(-90deg);
+        transform: scale(0.9);
     }
     100% {
         opacity: 1;
-        transform: translateY(0) rotateX(0);
+        transform: scale(1);
     }
 }
 
 /* Tagline */
 .intro__tagline {
     font-size: clamp(1rem, 3vw, 1.4rem);
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
+    color: #FFD700;
     letter-spacing: 3px;
     text-transform: uppercase;
-    opacity: 0;
-    animation: taglineFade 0.8s ease-out 1s forwards;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 8px;
 }
 
 /* Location */
@@ -122,20 +263,6 @@
     font-weight: 400;
     color: #00d4d4;
     letter-spacing: 2px;
-    margin-top: 12px;
-    opacity: 0;
-    animation: taglineFade 0.8s ease-out 1.3s forwards;
-}
-
-@keyframes taglineFade {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* Skip hint */
@@ -145,10 +272,11 @@
     left: 50%;
     transform: translateX(-50%);
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.5);
     letter-spacing: 1px;
+    z-index: 25;
     opacity: 0;
-    animation: skipFadeIn 0.5s ease-out 2s forwards;
+    animation: skipFadeIn 0.5s ease-out 2.8s forwards;
 }
 
 @keyframes skipFadeIn {
@@ -176,12 +304,16 @@
 
 /* Mobile */
 @media (max-width: 768px) {
-    .intro__title {
-        gap: 1px;
+    .intro__bubble {
+        transform: scale(0.7);
     }
 
-    .intro__space {
-        width: 12px;
+    .intro__foam-drip {
+        width: 50px;
+    }
+
+    .intro__logo {
+        border-radius: 12px;
     }
 
     .intro__tagline {
@@ -197,20 +329,25 @@
         bottom: 30px;
     }
 
-    .intro__lottie dotlottie-player {
+    .intro__bubbles dotlottie-player {
         max-width: 500px;
         max-height: 500px;
     }
 }
 
 @media (max-width: 480px) {
-    .intro__space {
-        width: 8px;
+    .intro__squeegee {
+        width: 80px;
     }
 
-    .intro__lottie dotlottie-player {
-        max-width: 350px;
-        max-height: 350px;
+    .squeegee-svg {
+        width: 80px;
+        height: 200px;
+    }
+
+    .intro__bubble--3,
+    .intro__bubble--7 {
+        display: none;
     }
 }
 
