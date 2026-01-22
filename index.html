@@ -24,7 +24,7 @@
     <meta name="theme-color" content="#1e3a5f">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="apple-touch-icon" href="images/logo.jpg">
+    <link rel="apple-touch-icon" href="images/logo-v2.jpg">
 
     <link rel="canonical" href="https://bubble-works.pages.dev/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +38,7 @@
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Bubble Works Window Cleaning",
-        "image": "https://bubble-works.pages.dev/images/logo.jpg",
+        "image": "https://bubble-works.pages.dev/images/logo-v2.jpg",
         "description": "Professional window cleaning and pressure washing services in Miami and South Florida",
         "@id": "https://bubble-works.pages.dev/",
         "url": "https://bubble-works.pages.dev/",
@@ -110,6 +110,46 @@
     </script>
 </head>
 <body>
+    <!-- INTRO ANIMATION - Lottie Professional -->
+    <div class="intro" id="intro">
+        <!-- Lottie bubble animation background -->
+        <div class="intro__lottie">
+            <dotlottie-player
+                src="https://lottie.host/4db68bbd-31f6-4cd8-84eb-189571794c0c/8IvWSwveAo.lottie"
+                background="transparent"
+                speed="1"
+                loop
+                autoplay>
+            </dotlottie-player>
+        </div>
+
+        <!-- Centered content -->
+        <div class="intro__content">
+            <h1 class="intro__title">
+                <span class="intro__letter">B</span>
+                <span class="intro__letter">U</span>
+                <span class="intro__letter">B</span>
+                <span class="intro__letter">B</span>
+                <span class="intro__letter">L</span>
+                <span class="intro__letter">E</span>
+                <span class="intro__space"></span>
+                <span class="intro__letter">W</span>
+                <span class="intro__letter">O</span>
+                <span class="intro__letter">R</span>
+                <span class="intro__letter">K</span>
+                <span class="intro__letter">S</span>
+            </h1>
+            <div class="intro__tagline">Window Cleaning & Exteriors</div>
+            <div class="intro__location">Fort Lauderdale & South Florida</div>
+        </div>
+
+        <!-- Skip hint -->
+        <div class="intro__skip">Click anywhere to skip</div>
+    </div>
+
+    <!-- Lottie Player Script -->
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
     <!-- Mobile Sticky Call Button -->
     <a href="tel:+16304008020" class="mobile-call-btn" aria-label="Call Now">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
@@ -134,7 +174,7 @@
     <header class="header" id="header">
         <div class="container header__inner">
             <a href="/" class="logo">
-                <img src="images/logo.jpg" alt="Bubble Works Logo" class="logo__img">
+                <img src="images/logo-v2.jpg" alt="Bubble Works Logo" class="logo__img">
             </a>
 
             <nav class="nav" id="nav">
@@ -209,7 +249,7 @@
                 </div>
                 <div class="trust-badge">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                    <span>Same-Day Service</span>
+                    <span>Free Estimates</span>
                 </div>
             </div>
         </div>
@@ -252,7 +292,7 @@
                     </div>
                     <div class="trust-bar__content">
                         <strong>Local Team</strong>
-                        <span>Miami Based</span>
+                        <span>Ft Lauderdale Based</span>
                     </div>
                 </div>
             </div>
@@ -307,7 +347,7 @@
                         <img src="images/hardwater-after.jpg" alt="Hard water removal Miami" loading="lazy" width="400" height="300">
                     </div>
                     <div class="service-card__content">
-                        <h3>Hard Water Removal</h3>
+                        <h3>Hard Water Stain Removal</h3>
                         <p>Eliminate stubborn mineral deposits from Miami's hard water.</p>
                         <span class="service-card__link">Get Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                     </div>
@@ -324,14 +364,47 @@
                     </div>
                 </a>
 
+                <a href="#quote" class="service-card">
+                    <div class="service-card__image">
+                        <img src="images/gutter-cleaning.jpg" alt="Gutter cleaning South Florida" loading="lazy" width="400" height="300">
+                    </div>
+                    <div class="service-card__content">
+                        <h3>Gutter Cleaning</h3>
+                        <p>Keep gutters clear and flowing. Prevent water damage to your property.</p>
+                        <span class="service-card__link">Get Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                    </div>
+                </a>
+
+                <a href="#quote" class="service-card">
+                    <div class="service-card__image">
+                        <img src="images/window-before.jpg" alt="Glass scratch removal South Florida" loading="lazy" width="400" height="300">
+                    </div>
+                    <div class="service-card__content">
+                        <h3>Scratch Removal</h3>
+                        <p>Professional glass scratch removal and restoration services.</p>
+                        <span class="service-card__link">Get Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                    </div>
+                </a>
+
+                <a href="#quote" class="service-card">
+                    <div class="service-card__image">
+                        <img src="images/pressure-after.jpg" alt="Graffiti removal South Florida" loading="lazy" width="400" height="300">
+                    </div>
+                    <div class="service-card__content">
+                        <h3>Graffiti Removal</h3>
+                        <p>Fast, effective graffiti removal for commercial and residential.</p>
+                        <span class="service-card__link">Get Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                    </div>
+                </a>
+
                 <a href="#quote" class="service-card service-card--featured">
                     <div class="service-card__badge">Save 15%</div>
                     <div class="service-card__image">
-                        <img src="images/windows-luxury.jpg" alt="Premium window cleaning package Miami" loading="lazy" width="400" height="300">
+                        <img src="images/windows-luxury.jpg" alt="Premium window cleaning package South Florida" loading="lazy" width="400" height="300">
                     </div>
                     <div class="service-card__content">
                         <h3>Premium Package</h3>
-                        <p>Bundle windows + pressure washing for complete Miami property care.</p>
+                        <p>Bundle windows + pressure washing for complete property care.</p>
                         <span class="service-card__link">Get Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                     </div>
                 </a>
@@ -394,7 +467,7 @@
                         <span class="comparison-slider__label comparison-slider__label--before">Before</span>
                         <span class="comparison-slider__label comparison-slider__label--after">After</span>
                     </div>
-                    <h4>Hard Water Removal - Coral Gables</h4>
+                    <h4>Hard Water Stain Removal - Coral Gables</h4>
                 </div>
 
                 <div class="gallery__item">
@@ -461,7 +534,7 @@
         <div class="container">
             <div class="about__grid">
                 <div class="about__image">
-                    <img src="images/adrian-owner.jpg" alt="Adrian Splawski - South Florida window cleaning owner" class="about__photo" loading="lazy" width="500" height="625">
+                    <div class="about__placeholder">AS</div>
                     <div class="about__badge">
                         <strong>15+</strong>
                         <span>Years in Miami</span>
@@ -484,11 +557,11 @@
                         </div>
                         <div class="feature">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span>Same-day quotes available</span>
+                            <span>Free quotes available</span>
                         </div>
                         <div class="feature">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span>Miami local since 2010</span>
+                            <span>Ft Lauderdale local since 2010</span>
                         </div>
                     </div>
 
@@ -697,8 +770,11 @@
                             <option value="windows">Window Cleaning</option>
                             <option value="pressure">Pressure Washing</option>
                             <option value="chandelier">Chandelier Care</option>
-                            <option value="hardwater">Hard Water Removal</option>
+                            <option value="hardwater">Hard Water Stain Removal</option>
                             <option value="construction">Post-Construction</option>
+                            <option value="gutter">Gutter Cleaning</option>
+                            <option value="scratch">Scratch Removal</option>
+                            <option value="graffiti">Graffiti Removal</option>
                             <option value="premium">Premium Package (15% OFF)</option>
                         </select>
                     </div>
@@ -768,21 +844,21 @@
             <div class="footer__grid">
                 <div class="footer__brand">
                     <a href="/" class="logo logo--light">
-                        <img src="images/logo.jpg" alt="Bubble Works Logo" class="logo__img logo__img--footer">
+                        <img src="images/logo-v2.jpg" alt="Bubble Works Logo" class="logo__img logo__img--footer">
                     </a>
-                    <p>Miami's trusted window cleaning and exterior service professionals. Serving all of South Florida since 2010. Licensed, insured, and committed to excellence.</p>
+                    <p>South Florida's trusted window cleaning and exterior service professionals. Based in Fort Lauderdale, serving all of South Florida since 2010. Licensed, insured, and committed to excellence.</p>
                 </div>
                 <div class="footer__links">
                     <h4>Services</h4>
                     <ul>
                         <li><a href="#services">Window Cleaning</a></li>
                         <li><a href="#services">Pressure Washing</a></li>
-                        <li><a href="#services">Chandelier Care</a></li>
-                        <li><a href="#services">Hard Water Removal</a></li>
+                        <li><a href="#services">Gutter Cleaning</a></li>
+                        <li><a href="#services">Scratch & Graffiti Removal</a></li>
                     </ul>
                 </div>
                 <div class="footer__links">
-                    <h4>Miami Areas</h4>
+                    <h4>Service Areas</h4>
                     <ul>
                         <li><a href="#areas">Miami Beach</a></li>
                         <li><a href="#areas">Coral Gables</a></li>
