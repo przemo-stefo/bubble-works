@@ -179,6 +179,18 @@ ul {
     letter-spacing: 0.5px;
 }
 
+.logo__img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.logo__img--footer {
+    height: 60px;
+    margin-bottom: 16px;
+}
+
 /* Navigation */
 .nav {
     display: flex;
