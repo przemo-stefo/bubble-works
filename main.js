@@ -4,49 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ==========================================================================
-    // INTRO ANIMATION
-    // ==========================================================================
-    const intro = document.getElementById('intro');
-
-    if (intro) {
-        // Check if user has seen intro in this session
-        const hasSeenIntro = sessionStorage.getItem('bubbleWorksIntroSeen');
-
-        if (hasSeenIntro) {
-            // Skip intro if already seen
-            intro.classList.add('hidden');
-        } else {
-            // Prevent scrolling during intro
-            document.body.style.overflow = 'hidden';
-
-            // Auto-hide intro after animation completes (4 seconds)
-            setTimeout(() => {
-                intro.classList.add('fade-out');
-                document.body.style.overflow = '';
-
-                // Remove from DOM after fade
-                setTimeout(() => {
-                    intro.classList.add('hidden');
-                }, 1000);
-
-                // Mark as seen
-                sessionStorage.setItem('bubbleWorksIntroSeen', 'true');
-            }, 4000);
-
-            // Allow click to skip intro
-            intro.addEventListener('click', () => {
-                intro.classList.add('fade-out');
-                document.body.style.overflow = '';
-
-                setTimeout(() => {
-                    intro.classList.add('hidden');
-                }, 800);
-
-                sessionStorage.setItem('bubbleWorksIntroSeen', 'true');
-            });
-        }
-    }
+    // Video intro is handled by inline script in index.html
 
     // Header scroll effect
     const header = document.getElementById('header');
