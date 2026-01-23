@@ -1,0 +1,8 @@
+# robots.txt for bubbleworksfl.com
+# Purpose: Allow all crawlers, point to sitemap
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://bubbleworksfl.com/sitemap.xml
