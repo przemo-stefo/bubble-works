@@ -49,6 +49,36 @@
 - **Skip text:** "Click anywhere to skip" → "Tap to skip" (mobile)
 - Dodano `webkit-playsinline` dla iOS
 
+### 2026-01-31: Content Fixes & Graffiti Removal Image
+
+#### Before/After Slider Fix
+- **Problem:** Pressure Washing slider miał zamienione obrazy (BEFORE wyglądał lepiej niż AFTER)
+- **Rozwiązanie:** Zamieniono `pressure-before.jpg` ↔ `pressure-after.jpg` miejscami
+- Teraz: BEFORE po lewej, AFTER po prawej (prawidłowa kolejność)
+
+#### Location Name Updates
+- **Pressure Washing:** ~~Brickell~~ → **Wilton Manors** (poprawna lokalizacja, Brickell ma inną zabudowę)
+- **Hard Water Stain Removal:** ~~Coral Gables~~ → **Miami Beach** (zgodnie z obrazkiem)
+
+#### Graffiti Removal Service Image
+- **Problem:** Sekcja "Graffiti Removal" używała obrazka ogrodu (`power-washing.jpg`)
+- **Rozwiązanie:** Znaleziono i dodano autentyczny obrazek graffiti cleaning
+- **Źródło:** [PxHere - CC0 Public Domain](https://pxhere.com/en/photo/1193263)
+- **Licencja:** CC0 (darmowe, komercyjne użycie, bez wymagań attribution)
+- **Plik:** `images/graffiti-removal.jpg` (4.5MB, 4087×3886px)
+- **Pokazuje:** Graffiti cleaning process z bucket i narzędziami
+
+#### Git Commits
+```
+212fc15 feat: Add authentic graffiti removal image
+ace0f3b fix: Correct before/after images and update location names
+```
+
+#### Deployment
+- **Cloudflare Pages:** https://bubbleworksfl.com
+- **Preview:** https://6a35c7c1.bubble-works.pages.dev
+- **Status:** ✅ LIVE
+
 ---
 
 ## Struktura plików
@@ -117,11 +147,15 @@ npx wrangler pages deploy . --project-name=bubble-works --commit-dirty=true
 ## Git Commits (najważniejsze)
 
 ```
-f4eb68d feat(mobile): Optimize intro and mobile UX
-e24b22b feat: Replace CSS intro with AI-generated video intro
-aaebc18 feat(seo): Add robots.txt, sitemap.xml, og:image, Twitter Cards and favicon
-9ae69a4 feat: Add WhatsApp floating chat button
-bc18be8 feat: Update domain to bubbleworksfl.com and rebrand for South Florida
+212fc15 feat: Add authentic graffiti removal image (2026-01-31)
+ace0f3b fix: Correct before/after images and update location names (2026-01-31)
+0fe51a2 docs: Add comprehensive BUBBLEWORKS.md documentation (2026-01-23)
+cd4961d docs: Comprehensive Privacy Policy and Terms of Service update (2026-01-23)
+f4eb68d feat(mobile): Optimize intro and mobile UX (2026-01-23)
+e24b22b feat: Replace CSS intro with AI-generated video intro (2026-01-23)
+aaebc18 feat(seo): Add robots.txt, sitemap.xml, og:image, Twitter Cards and favicon (2026-01-23)
+9ae69a4 feat: Add WhatsApp floating chat button (2026-01-22)
+bc18be8 feat: Update domain to bubbleworksfl.com and rebrand for South Florida (2026-01-22)
 ```
 
 ---
@@ -167,4 +201,4 @@ Mobile (< 768px):
 
 ---
 
-*Ostatnia aktualizacja: 2026-01-23*
+*Ostatnia aktualizacja: 2026-01-31*
